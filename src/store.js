@@ -63,25 +63,30 @@ export const store = reactive({
                         text: " By admin|January 7th 2020|Categories:News"
                 }
         ],
+        sliderPhoto:["mm-1.jpg","mm-2.jpg","mm-3.jpg","mm-4.jpg"],
         menuHors: [{
                 name: "ahi salmoni nigiri",
                 description: "eget vulputate quis rutrum blandit sed. quam nulla sit lacinia.",
                 price: "$48",
+                img:"slider32x.jpg"
         },
         {
                 name: "umi masu salad",
                 description: "Mollis ornare sit sapien,sodales.Cursus duis proin semper.",
                 price: "$21",
+                img:"slider52x.jpg"
         },
         {
                 name: "temaki with crab",
                 description: "ac vel,risus ornare senectus placerat duis amet dictumst tellus",
                 price: "$32",
+                img:"sushi-1.png"
         },
         {
                 name: "california rolls",
                 description: "ac vel,risus ornare senectus placerat duis amet dictumst tellus",
                 price: "$22",
+                img:"sushi-3.png"
         },
         ],
         mainCourse:[
@@ -89,21 +94,26 @@ export const store = reactive({
                         name: "braised abalone",
                         description: "ac vel,risus ornare senectus placerat duis amet dictumst tellus",
                         price: "$52",
+                        img:"slider52x.jpg"
                 },
                 {
                         name: "twice cooked pork",
                         description: "Mollis ornare sit sapien,sodales.Cursus duis proin semper.",
                         price: "$21",
+                        img:"sushi-1.png"
                 },
                 {
                         name: "kung pao chicken",
                         description: "ac vel,risus ornare senectus placerat duis amet dictumst tellus",
                         price: "$32",
+                        img:"slider52x.jpg"
                 },
                 {
                         name: "char siu & sushis",
                         description: "Mollis ornare sit sapien,sodales.Cursus duis proin semper.",
                         price: "$48",
+                        img:"sushi-3.png"
+
                 },
         ],
         desserts:[
@@ -111,21 +121,25 @@ export const store = reactive({
                         name: "chocolate ball cake",
                         description: "ac vel,risus ornare senectus placerat duis amet dictumst tellus",
                         price: "$12",
+                        img:"mm-1.jpg"
                 },
                 {
                         name: "lime pie with crust",
                         description: "Mollis ornare sit sapien,sodales.Cursus duis proin semper.",
                         price: "$21",
+                        img:"mm-3.jpg"
                 },
                 {
                         name: "rasperry cake",
                         description: "ac vel,risus ornare senectus placerat duis amet dictumst tellus",
                         price: "$32",
+                        img:"mm-4.jpg"
                 },
                 {
                         name:"cafe au lat",
                         description: "Mollis ornare sit sapien,sodales.Cursus duis proin semper.",
                         price: "$6",
+                        img:"mm-1.jpg"
                 },
         ]
 

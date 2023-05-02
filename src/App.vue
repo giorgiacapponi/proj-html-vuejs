@@ -4,7 +4,8 @@ import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppCard from './components/AppCard.vue';
 export default {
-components:{AppHeader,AppMain,AppFooter,AppCard}
+components:{AppHeader,AppMain,AppFooter,AppCard},
+
 }
 
 
@@ -52,6 +53,10 @@ components:{AppHeader,AppMain,AppFooter,AppCard}
       }
      
 }
+.col-img :nth-of-type(1) .critics-card{
+      background-color: black;
+}
+
 
 
 

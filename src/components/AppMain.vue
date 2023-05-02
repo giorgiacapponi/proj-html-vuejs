@@ -9,11 +9,37 @@ export default {
     data() {
         return {
             store,
+            showedPhoto:"slider32x.jpg",
+            infoPhoto:{
+                name: "ahi salmoni nigiri",
+                description: "eget vulputate quis rutrum blandit sed. quam nulla sit lacinia.",
+                price: "$48",
+            },
+            indexSlider:0,
         };
     },
-    methods: {
+    mounted(){
+        setInterval(this.showNext,3000)
+    },
+        methods: {
         getimagePath: function (img) {
             return new URL(`../assets/img/${img}`, import.meta.url).href;
+        },
+        showPhoto(item,index) {
+           this.showedPhoto=item.img;
+           console.log(this.showedPhoto);
+           this.infoPhoto=item;
+           console.log(this.infoPhoto);
+            
+        },
+        showNext(){
+            if(this.indexSlider<store.sliderPhoto.length -1){
+                this.store.sliderPhoto[this.indexSlider]=this.store.sliderPhoto[this.indexSlider++];
+            }else{
+                this.indexSlider=0;
+            }
+   
+       
         }
     },
 }
@@ -82,7 +108,7 @@ export default {
 
         <!-- section slider -->
         <section class="slider">
-            <img src="../assets/img/mm-2.jpg" alt="">
+            <img :src="getimagePath(store.sliderPhoto[indexSlider])" alt="" @click="showNext()" >
         </section>
 
         <!-- section latest news -->
@@ -114,7 +140,7 @@ export default {
                 <section class="container py-5 hors" >
                 <h2 class="mb-5">hors d'oeuvres</h2>
                 <ul>
-                    <li v-for="item in store.menuHors">
+                    <li v-for="item,index in store.menuHors" @click="showPhoto(item,index)">
                      
                       <div class="d-flex justify-content-between" >
                         <h3>{{ item.name }}</h3>
@@ -127,7 +153,7 @@ export default {
             <section class="container py-5 main" >
                 <h2 class="mb-5">hors d'oeuvres</h2>
                 <ul>
-                    <li v-for="item in store.mainCourse">
+                    <li v-for="item,index in store.mainCourse" @click="showPhoto(item,index)">
                      
                       <div class="d-flex justify-content-between" >
                         <h3>{{ item.name }}</h3>
@@ -140,7 +166,7 @@ export default {
             <section class="container py-5 dessert" >
                 <h2 class="mb-5">dessert</h2>
                 <ul>
-                    <li v-for="item in store.desserts">
+                    <li v-for="item,index in store.desserts" @click="showPhoto(item,index)">
                      
                       <div class="d-flex justify-content-between" >
                         <h3>{{ item.name }}</h3>
@@ -156,8 +182,8 @@ export default {
         </div>
         <!-- slider menu -->
         <div class="slider-menu">
-            <img src="../assets/img/slider32x.jpg" alt="">
-            <AppCard class="card-slider-menu" :cardTitle="store.desserts[0].name" :cardText="store.desserts[0].description" :cardPrice="store.desserts[0].price" linkBtn="view in the menu"/>
+            <img :src="getimagePath(showedPhoto)" alt="">
+            <AppCard class="card-slider-menu" :cardTitle="infoPhoto.name" :cardText="infoPhoto.description" :cardPrice="infoPhoto.price" linkBtn="view in the menu"/>
         </div>
 
     </main>

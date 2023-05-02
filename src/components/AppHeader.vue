@@ -7,12 +7,7 @@ export default {
     data() {
         return {
             store,
-            cardHeader:{
-                title:"The best table in town",
-                subtitle:"Fine dining experience",
-                text:"Pellentesque vitae viverra risus,sagittis.Venenatis ridiculus scelerisque nisi in urna nulla.Sit tempor a et nisl,ac felis.",
-                linkBtn:"Explore the menu",
-            }
+           
            
 
         }
@@ -23,7 +18,7 @@ export default {
 
 
 <template> 
- <!-- nav bar header sarà in z-index? -->
+ 
  
 <header class="d-flex">
     <div class="container nav-bar">
@@ -47,7 +42,7 @@ export default {
    
 
     <div class="col-5 header-left">
-       <AppCard class="header-card  " :cardTitle="cardHeader.title" :cardSubTitle="cardHeader.subtitle" :linkBtn="cardHeader.linkBtn" :cardText="cardHeader.text"/>
+       <AppCard class="header-card  " :cardTitle="store.cardHeader.title" :cardSubTitle="store.cardHeader.subtitle" :linkBtn="store.cardHeader.linkBtn" :cardText="store.cardHeader.text"/>
 
     </div>
     <div class="col-7 header-right">
@@ -67,7 +62,6 @@ header{height: 100vh;
         position:absolute;
         top:1.5rem;
         left:3rem;
-        z-index: 1;
         padding-left: 0;
         
     }
